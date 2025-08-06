@@ -20,3 +20,14 @@ def index(request):
         'show_meetups': True,
         'meetups': meetups
     })
+
+
+def meetup_details(request, meetup_slug):
+    selected_meetup = {
+        'title': 'A First Meetup',
+        'description': 'This is the first meetup about Django.'
+    }
+    return render(request, 'meetups/meetup-details.html', {
+        'meetup_title': selected_meetup['title'],
+        'meetup_description': selected_meetup['description']
+    })
